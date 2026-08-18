@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Every job installs into a project-local .venv rather than with --system.
+# The runner's Python is Debian-managed and refuses system-wide installs, and
+# a venv is what a contributor uses locally anyway - so CI exercises the same
+# path the README documents.
+jobs:
+  test:
+    name: test (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Create environment
+        run: uv venv --python ${{ matrix.python-version }}
+
+      - name: Install project
+        run: uv pip install -e ".[dev]"
+
+      # The suite runs entirely against the deterministic fake LLM backend, so
+      # CI needs no GPU, no model download and no API key.
+      - name: Run tests
+        run: uv run pytest -q --cov=agent_core --cov-report=term-missing --cov-report=xml
+
+      - name: Upload coverage
+        if: matrix.python-version == '3.13'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage.xml
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Create environment
+        run: uv venv --python 3.13
+
+      - name: Install project
+        run: uv pip install -e ".[dev]"
+
+      - name: Ruff (lint)
+        run: uv run ruff check --output-format=github .
+
+      - name: Ruff (format)
+        run: uv run ruff format --check .
+
+      - name: Mypy (strict)
+        run: uv run mypy
+
+  benchmark:
+    name: benchmark (smoke)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Create environment
+        run: uv venv --python 3.13
+
+      - name: Install project
+        run: uv pip install -e ".[dev]"
+
+      # Runs the full strategy x task matrix against the fake backend. Guards
+      # against the benchmark script rotting, since it produces the README
+      # numbers when pointed at a real model instead.
+      - name: Run benchmark (fake backend)
+        run: uv run python benchmarks/bench.py --backend fake --runs 1 --out /tmp/bench-smoke.json

@@ -1,0 +1,8 @@
+# Normalise to LF in the repository. Without this, files authored on Windows
+# land in the repo with CRLF and every diff viewed on Linux or in the GitHub UI
+# shows the whole file as changed.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary

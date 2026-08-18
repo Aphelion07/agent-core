@@ -1,0 +1,5639 @@
+{
+  "backend": "ollama",
+  "model": "qwen3:8b",
+  "max_steps": 8,
+  "runs_per_task": 3,
+  "summary": {
+    "plan_execute": {
+      "runs": 42,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        1.0,
+        1.0
+      ],
+      "solvable_success_rate": 1.0,
+      "unsolvable_refusal_rate": 1.0,
+      "hit_step_limit_rate": 0.0,
+      "distractor_call_rate": 0.0,
+      "mean_llm_calls": 3.619047619047619,
+      "mean_tool_calls": 1.4047619047619047,
+      "mean_total_tokens": 2570.3809523809523,
+      "mean_wall_time_s": 8.989326423809503
+    },
+    "react": {
+      "runs": 42,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        1.0,
+        1.0
+      ],
+      "solvable_success_rate": 1.0,
+      "unsolvable_refusal_rate": 1.0,
+      "hit_step_limit_rate": 0.0,
+      "distractor_call_rate": 0.0,
+      "mean_llm_calls": 2.238095238095238,
+      "mean_tool_calls": 1.4047619047619047,
+      "mean_total_tokens": 1686.6904761904761,
+      "mean_wall_time_s": 4.228356416666667
+    },
+    "reflexion": {
+      "runs": 42,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        1.0,
+        1.0
+      ],
+      "solvable_success_rate": 1.0,
+      "unsolvable_refusal_rate": 1.0,
+      "hit_step_limit_rate": 0.0,
+      "distractor_call_rate": 0.0,
+      "mean_llm_calls": 3.2142857142857144,
+      "mean_tool_calls": 1.380952380952381,
+      "mean_total_tokens": 2246.5476190476193,
+      "mean_wall_time_s": 5.628264157142786
+    }
+  },
+  "per_task_success_rate": {
+    "plan_execute/calc_multi_step": 1.0,
+    "plan_execute/calc_precedence": 1.0,
+    "plan_execute/catalog_lookup_basic": 1.0,
+    "plan_execute/catalog_then_calc": 1.0,
+    "plan_execute/date_and_calc": 1.0,
+    "plan_execute/date_diff_basic": 1.0,
+    "plan_execute/distractor_check": 1.0,
+    "plan_execute/multi_tool_chain": 1.0,
+    "plan_execute/temp_convert": 1.0,
+    "plan_execute/unit_chain": 1.0,
+    "plan_execute/unit_km_to_mi": 1.0,
+    "plan_execute/unknown_sku": 1.0,
+    "plan_execute/unsolvable_currency": 1.0,
+    "plan_execute/unsolvable_stock": 1.0,
+    "react/calc_multi_step": 1.0,
+    "react/calc_precedence": 1.0,
+    "react/catalog_lookup_basic": 1.0,
+    "react/catalog_then_calc": 1.0,
+    "react/date_and_calc": 1.0,
+    "react/date_diff_basic": 1.0,
+    "react/distractor_check": 1.0,
+    "react/multi_tool_chain": 1.0,
+    "react/temp_convert": 1.0,
+    "react/unit_chain": 1.0,
+    "react/unit_km_to_mi": 1.0,
+    "react/unknown_sku": 1.0,
+    "react/unsolvable_currency": 1.0,
+    "react/unsolvable_stock": 1.0,
+    "reflexion/calc_multi_step": 1.0,
+    "reflexion/calc_precedence": 1.0,
+    "reflexion/catalog_lookup_basic": 1.0,
+    "reflexion/catalog_then_calc": 1.0,
+    "reflexion/date_and_calc": 1.0,
+    "reflexion/date_diff_basic": 1.0,
+    "reflexion/distractor_check": 1.0,
+    "reflexion/multi_tool_chain": 1.0,
+    "reflexion/temp_convert": 1.0,
+    "reflexion/unit_chain": 1.0,
+    "reflexion/unit_km_to_mi": 1.0,
+    "reflexion/unknown_sku": 1.0,
+    "reflexion/unsolvable_currency": 1.0,
+    "reflexion/unsolvable_stock": 1.0
+  },
+  "traces": [
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 2,
+      "total_tokens": 5912,
+      "wall_time_s": 27.1956794000007,
+      "final_answer": "The final answer is 96.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 262,
+          "completion_tokens": 1981,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 479,
+          "completion_tokens": 305,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 550,
+          "completion_tokens": 409,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '144 / 12'}) -> 12.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is 96.",
+          "prompt_tokens": 606,
+          "completion_tokens": 543,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is 96.",
+          "prompt_tokens": 311,
+          "completion_tokens": 466,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 3,
+      "total_tokens": 7117,
+      "wall_time_s": 34.714172699999835,
+      "final_answer": "The final answer is $\\boxed{96}$.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 262,
+          "completion_tokens": 2158,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 480,
+          "completion_tokens": 1372,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 552,
+          "completion_tokens": 285,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '144 / 12'}) -> 12.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 612,
+          "completion_tokens": 760,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is $\\boxed{96}$.",
+          "prompt_tokens": 355,
+          "completion_tokens": 281,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 2,
+      "total_tokens": 3750,
+      "wall_time_s": 11.219017799999165,
+      "final_answer": "The final answer is **96**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 262,
+          "completion_tokens": 210,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 475,
+          "completion_tokens": 398,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 542,
+          "completion_tokens": 358,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final result of (12 * 7) + (144 / 12) is **96**.",
+          "prompt_tokens": 607,
+          "completion_tokens": 316,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is **96**.",
+          "prompt_tokens": 331,
+          "completion_tokens": 251,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 1,
+      "total_tokens": 3593,
+      "wall_time_s": 15.289401199999702,
+      "final_answer": "The result of $8 + 2 \\times 5$ is $\\boxed{18}$.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 252,
+          "completion_tokens": 1377,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 178,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of $8 + 2 \\times 5$ is $\\boxed{18}$.",
+          "prompt_tokens": 523,
+          "completion_tokens": 253,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of $8 + 2 \\times 5$ is $\\boxed{18}$.",
+          "prompt_tokens": 231,
+          "completion_tokens": 307,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 1,
+      "total_tokens": 2703,
+      "wall_time_s": 9.006291599999713,
+      "final_answer": "The result of 8 + 2 * 5 is **18**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 252,
+          "completion_tokens": 448,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 473,
+          "completion_tokens": 317,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is **18**.",
+          "prompt_tokens": 527,
+          "completion_tokens": 176,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is **18**.",
+          "prompt_tokens": 231,
+          "completion_tokens": 279,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2046,
+      "wall_time_s": 8.1499917000001,
+      "final_answer": "The result of 8 + 2 * 5 is 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 252,
+          "completion_tokens": 755,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 478,
+          "completion_tokens": 232,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is 18.",
+          "prompt_tokens": 201,
+          "completion_tokens": 128,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1382,
+      "wall_time_s": 3.697741400000268,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 246,
+          "completion_tokens": 219,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 159,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 191,
+          "completion_tokens": 101,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1338,
+      "wall_time_s": 3.3350235999996585,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 246,
+          "completion_tokens": 152,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 152,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 191,
+          "completion_tokens": 131,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1447,
+      "wall_time_s": 4.081777800000054,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 246,
+          "completion_tokens": 261,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 152,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'mi', 'value': 100, 'from_unit': 'km'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 191,
+          "completion_tokens": 131,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2100,
+      "wall_time_s": 7.723206200000277,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 261,
+          "completion_tokens": 364,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 496,
+          "completion_tokens": 232,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 50, 'from_unit': 'kg', 'to_unit': 'lb'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(result + 10)'}) -> calculator raised ValueError: unsupported expression: Name(id='result', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 280,
+          "completion_tokens": 467,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2885,
+      "wall_time_s": 9.673325900000236,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 261,
+          "completion_tokens": 359,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 478,
+          "completion_tokens": 423,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'lb', 'value': 50, 'from_unit': 'kg'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 544,
+          "completion_tokens": 325,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '110.23 + 10'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 281,
+          "completion_tokens": 214,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2437,
+      "wall_time_s": 6.569552599999952,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 261,
+          "completion_tokens": 267,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 477,
+          "completion_tokens": 144,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'lb', 'value': 50, 'from_unit': 'kg'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 542,
+          "completion_tokens": 213,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '110.23 + 10'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 279,
+          "completion_tokens": 254,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1356,
+      "wall_time_s": 3.455153099999734,
+      "final_answer": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 247,
+          "completion_tokens": 170,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 468,
+          "completion_tokens": 165,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "prompt_tokens": 195,
+          "completion_tokens": 111,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2277,
+      "wall_time_s": 9.820735799999966,
+      "final_answer": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "The unit_convert tool is not available in the provided functions. Cannot perform the conversion.",
+          "prompt_tokens": 247,
+          "completion_tokens": 1086,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 468,
+          "completion_tokens": 170,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'f', 'value': 100, 'from_unit': 'c'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "prompt_tokens": 195,
+          "completion_tokens": 111,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1370,
+      "wall_time_s": 3.533244100000047,
+      "final_answer": "The final answer is 212.00 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 247,
+          "completion_tokens": 199,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 468,
+          "completion_tokens": 151,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is 212.00 degrees Fahrenheit.",
+          "prompt_tokens": 195,
+          "completion_tokens": 110,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1680,
+      "wall_time_s": 4.820678699999917,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is **73 days**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 267,
+          "completion_tokens": 265,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 508,
+          "completion_tokens": 229,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is **73 days**.",
+          "prompt_tokens": 261,
+          "completion_tokens": 150,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2483,
+      "wall_time_s": 10.440688300000147,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is **73 days**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 267,
+          "completion_tokens": 277,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 508,
+          "completion_tokens": 262,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is **73 days**.",
+          "prompt_tokens": 261,
+          "completion_tokens": 908,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1953,
+      "wall_time_s": 6.69324990000041,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is $\\boxed{73}$.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 267,
+          "completion_tokens": 277,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 508,
+          "completion_tokens": 261,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is $\\boxed{73}$.",
+          "prompt_tokens": 261,
+          "completion_tokens": 379,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2020,
+      "wall_time_s": 6.805727099999785,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**.  \nMultiplying by 24 gives **216 hours**.  \n\nFinal answer: **216 hours**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 277,
+          "completion_tokens": 337,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 528,
+          "completion_tokens": 294,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**.  \nMultiplying by 24 gives **216 hours**.  \n\nFinal answer: **216 hours**.",
+          "prompt_tokens": 290,
+          "completion_tokens": 294,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 3219,
+      "wall_time_s": 10.935989900000095,
+      "final_answer": "There are 9 days between 2026-06-01 and 2026-06-10. Multiplying by 24 gives **216 hours**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 277,
+          "completion_tokens": 562,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 516,
+          "completion_tokens": 424,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 588,
+          "completion_tokens": 190,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "There are 9 days between 2026-06-01 and 2026-06-10. Multiplying by 24 gives **216 hours**.",
+          "prompt_tokens": 335,
+          "completion_tokens": 327,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 3282,
+      "wall_time_s": 11.365537800000311,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**. \n\nFinal answer: **216 hours**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 277,
+          "completion_tokens": 652,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 516,
+          "completion_tokens": 415,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 592,
+          "completion_tokens": 190,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**. \n\nFinal answer: **216 hours**.",
+          "prompt_tokens": 339,
+          "completion_tokens": 301,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 1,
+      "total_tokens": 2772,
+      "wall_time_s": 9.18671220000033,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 255,
+          "completion_tokens": 854,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 480,
+          "completion_tokens": 130,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 539,
+          "completion_tokens": 108,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 248,
+          "completion_tokens": 158,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 1,
+      "total_tokens": 3719,
+      "wall_time_s": 11.673367800000051,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 255,
+          "completion_tokens": 933,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 477,
+          "completion_tokens": 160,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 536,
+          "completion_tokens": 135,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 573,
+          "completion_tokens": 154,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 282,
+          "completion_tokens": 214,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 1,
+      "total_tokens": 3890,
+      "wall_time_s": 17.13706959999945,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 255,
+          "completion_tokens": 1964,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 477,
+          "completion_tokens": 165,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 537,
+          "completion_tokens": 111,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD.",
+          "prompt_tokens": 246,
+          "completion_tokens": 135,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2675,
+      "wall_time_s": 8.286507099999653,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 258,
+          "completion_tokens": 390,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 479,
+          "completion_tokens": 127,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 540,
+          "completion_tokens": 289,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '129 * 3'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 269,
+          "completion_tokens": 323,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2463,
+      "wall_time_s": 6.739790500000709,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 258,
+          "completion_tokens": 412,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 480,
+          "completion_tokens": 113,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 546,
+          "completion_tokens": 213,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '129.00 * 3'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 278,
+          "completion_tokens": 163,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2363,
+      "wall_time_s": 6.171908299999814,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 258,
+          "completion_tokens": 319,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 479,
+          "completion_tokens": 127,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 537,
+          "completion_tokens": 170,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '129.00 * 3'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 269,
+          "completion_tokens": 204,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1617,
+      "wall_time_s": 4.748980499999561,
+      "final_answer": "no such SKU in the catalog: does-not-exist-99",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 259,
+          "completion_tokens": 288,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 492,
+          "completion_tokens": 183,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 233,
+          "completion_tokens": 162,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1597,
+      "wall_time_s": 4.593414400000256,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\".",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 259,
+          "completion_tokens": 269,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 492,
+          "completion_tokens": 139,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\".",
+          "prompt_tokens": 233,
+          "completion_tokens": 205,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2125,
+      "wall_time_s": 8.430849800000033,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\".",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 259,
+          "completion_tokens": 858,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 479,
+          "completion_tokens": 176,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\".",
+          "prompt_tokens": 220,
+          "completion_tokens": 133,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1850,
+      "wall_time_s": 6.010594599999422,
+      "final_answer": "The number of 5km days needed is 8.432.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 268,
+          "completion_tokens": 385,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 510,
+          "completion_tokens": 172,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is 8.432.",
+          "prompt_tokens": 258,
+          "completion_tokens": 257,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2433,
+      "wall_time_s": 6.205505200000516,
+      "final_answer": "The number of 5km days needed is **8.43**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 268,
+          "completion_tokens": 191,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 486,
+          "completion_tokens": 152,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 551,
+          "completion_tokens": 335,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is **8.43**.",
+          "prompt_tokens": 304,
+          "completion_tokens": 146,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2757,
+      "wall_time_s": 8.410701799999515,
+      "final_answer": "The number of 5km days needed is **8.43**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 268,
+          "completion_tokens": 373,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 486,
+          "completion_tokens": 146,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 552,
+          "completion_tokens": 476,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is **8.43**.",
+          "prompt_tokens": 305,
+          "completion_tokens": 151,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1452,
+      "wall_time_s": 3.9900667000001704,
+      "final_answer": "The final answer is 60.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 256,
+          "completion_tokens": 242,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 474,
+          "completion_tokens": 157,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is 60.",
+          "prompt_tokens": 199,
+          "completion_tokens": 124,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1615,
+      "wall_time_s": 4.941660199999205,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 256,
+          "completion_tokens": 231,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 486,
+          "completion_tokens": 182,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(15 * 4)'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 213,
+          "completion_tokens": 247,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1722,
+      "wall_time_s": 5.8246304000003875,
+      "final_answer": "The final answer is 60.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 256,
+          "completion_tokens": 458,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 475,
+          "completion_tokens": 129,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final answer is 60.",
+          "prompt_tokens": 200,
+          "completion_tokens": 204,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 2,
+      "total_tokens": 4645,
+      "wall_time_s": 17.632352499999797,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. Currency conversion to Japanese Yen is not supported with the available tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 254,
+          "completion_tokens": 1279,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 476,
+          "completion_tokens": 297,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 536,
+          "completion_tokens": 336,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'JPY', 'value': 19.99, 'from_unit': 'USD'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The conversion from USD to JPY is not supported with the available tools. Please check if another conversion method or tool is available for currency exchange.",
+          "prompt_tokens": 605,
+          "completion_tokens": 207,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. Currency conversion to Japanese Yen is not supported with the available tools.",
+          "prompt_tokens": 323,
+          "completion_tokens": 332,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2486,
+      "wall_time_s": 7.0093754999998055,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. However, the conversion from USD to JPY is not supported by the available tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 254,
+          "completion_tokens": 250,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 477,
+          "completion_tokens": 123,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 541,
+          "completion_tokens": 354,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 19.99, 'from_unit': 'USD', 'to_unit': 'JPY'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. However, the conversion from USD to JPY is not supported by the available tools.",
+          "prompt_tokens": 279,
+          "completion_tokens": 208,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 5,
+      "tool_calls": 2,
+      "total_tokens": 3555,
+      "wall_time_s": 9.626459500000237,
+      "final_answer": "The price of SKU 'widget-42' is 19.99 USD. However, the available tools do not support converting USD to Japanese Yen (JPY). \n\nFinal answer: 19.99 USD (Conversion to JPY not supported by available tools).",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 254,
+          "completion_tokens": 320,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 479,
+          "completion_tokens": 100,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 546,
+          "completion_tokens": 184,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 19.99, 'from_unit': 'USD', 'to_unit': 'JPY'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is 19.99 USD. However, the available tools do not support converting USD to Japanese Yen (JPY). Please use a currency conversion service for this conversion. \n\nFinal answe",
+          "prompt_tokens": 614,
+          "completion_tokens": 320,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is 19.99 USD. However, the available tools do not support converting USD to Japanese Yen (JPY). \n\nFinal answer: 19.99 USD (Conversion to JPY not supported by available too",
+          "prompt_tokens": 372,
+          "completion_tokens": 366,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2535,
+      "wall_time_s": 11.477331400000367,
+      "final_answer": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity is not provided in the tool's response.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 253,
+          "completion_tokens": 991,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 480,
+          "completion_tokens": 273,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity is not provided in the tool's response.",
+          "prompt_tokens": 202,
+          "completion_tokens": 336,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1752,
+      "wall_time_s": 6.011458299999504,
+      "final_answer": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity was not provided in the tool response.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "0 tool call(s)",
+          "prompt_tokens": 253,
+          "completion_tokens": 358,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 480,
+          "completion_tokens": 191,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity was not provided in the tool response.",
+          "prompt_tokens": 202,
+          "completion_tokens": 268,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "plan_execute",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1583,
+      "wall_time_s": 4.916786900000261,
+      "final_answer": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity could not be retrieved with the available tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 253,
+          "completion_tokens": 311,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 476,
+          "completion_tokens": 174,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is **4.50 USD**. The stock quantity could not be retrieved with the available tools.",
+          "prompt_tokens": 198,
+          "completion_tokens": 171,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1391,
+      "wall_time_s": 3.0496219999995446,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 235,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 173,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1381,
+      "wall_time_s": 2.947104099999706,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 222,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 176,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1350,
+      "wall_time_s": 2.7342490000000907,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 205,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 162,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1339,
+      "wall_time_s": 2.873605900000257,
+      "final_answer": "The result of 8 + 2 * 5 is **18**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 225,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is **18**.",
+          "prompt_tokens": 497,
+          "completion_tokens": 161,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1343,
+      "wall_time_s": 2.9257812999994712,
+      "final_answer": "The result of 8 + 2 * 5 is 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 211,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is 18.",
+          "prompt_tokens": 497,
+          "completion_tokens": 179,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1358,
+      "wall_time_s": 2.9974134000003687,
+      "final_answer": "The result of 8 + 2 * 5 is 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 226,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is 18.",
+          "prompt_tokens": 497,
+          "completion_tokens": 179,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1271,
+      "wall_time_s": 2.4352228000007017,
+      "final_answer": "100 kilometers is approximately 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 161,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is approximately 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 161,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1306,
+      "wall_time_s": 2.666928800000278,
+      "final_answer": "100 kilometers is approximately 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 181,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'km', 'to_unit': 'mi', 'value': 100}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is approximately 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 176,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1250,
+      "wall_time_s": 2.280608199999733,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 161,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 140,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 2,
+      "total_tokens": 1480,
+      "wall_time_s": 3.4044739999999365,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 192,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'lb', 'value': 50, 'from_unit': 'kg'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(result + 10)'}) -> calculator raised ValueError: unsupported expression: Name(id='result', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 558,
+          "completion_tokens": 265,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 2,
+      "total_tokens": 1943,
+      "wall_time_s": 6.595851299999595,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 438,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'kg', 'to_unit': 'lb', 'value': 50}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': 'result_of_previous_conversion + 10'}) -> calculator raised ValueError: unsupported expression: Name(id='result_of_previous_conversion', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 562,
+          "completion_tokens": 478,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 3,
+      "total_tokens": 3071,
+      "wall_time_s": 10.33332690000043,
+      "final_answer": "The final number after converting 50 kg to pounds (110.23 lb) and adding 10 is **120.23**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 969,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'kg', 'to_unit': 'lb', 'value': 50}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(result_of_previous_conversion) + 10'}) -> calculator raised ValueError: unsupported expression: Name(id='result_of_previous_conversion', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 564,
+          "completion_tokens": 236,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '110.23 + 10'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number after converting 50 kg to pounds (110.23 lb) and adding 10 is **120.23**.",
+          "prompt_tokens": 610,
+          "completion_tokens": 227,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1205,
+      "wall_time_s": 1.9703156000005038,
+      "final_answer": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 153,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+          "prompt_tokens": 501,
+          "completion_tokens": 100,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1276,
+      "wall_time_s": 2.452785700000277,
+      "final_answer": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 153,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "prompt_tokens": 501,
+          "completion_tokens": 171,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1308,
+      "wall_time_s": 2.6631899000003614,
+      "final_answer": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 154,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'c', 'to_unit': 'f', 'value': 100}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+          "prompt_tokens": 501,
+          "completion_tokens": 202,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1598,
+      "wall_time_s": 4.379614499999661,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 338,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 262,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1440,
+      "wall_time_s": 3.2530980000001364,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 214,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 228,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1497,
+      "wall_time_s": 3.6672398000000612,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 221,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 278,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 2,
+      "total_tokens": 1794,
+      "wall_time_s": 5.372134199999891,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is 9 days. Multiplying by 24 gives **216 hours**. \n\nFinal answer: 216 hours.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 471,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'end': '2026-06-10', 'start': '2026-06-01'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is 9 days. Multiplying by 24 gives **216 hours**. \n\nFinal answer: 216 hours.",
+          "prompt_tokens": 568,
+          "completion_tokens": 274,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2372,
+      "wall_time_s": 5.693247500000325,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 445,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 536,
+          "completion_tokens": 190,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+          "prompt_tokens": 576,
+          "completion_tokens": 144,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2237,
+      "wall_time_s": 4.753044399999453,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is 9 days. Multiplying by 24 gives:\n\n**216 hours**",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 339,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 536,
+          "completion_tokens": 165,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is 9 days. Multiplying by 24 gives:\n\n**216 hours**",
+          "prompt_tokens": 576,
+          "completion_tokens": 140,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1205,
+      "wall_time_s": 1.9212930000003325,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 125,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 121,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1154,
+      "wall_time_s": 1.571413399999983,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 91,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 104,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1154,
+      "wall_time_s": 1.5531099999998332,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 91,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 104,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2036,
+      "wall_time_s": 3.9617152999999234,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 202,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 504,
+          "completion_tokens": 185,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '129 * 3'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 545,
+          "completion_tokens": 138,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 3,
+      "total_tokens": 2868,
+      "wall_time_s": 9.161920599999576,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 793,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(price) * 3'}) -> calculator raised ValueError: unsupported expression: Name(id='price', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 547,
+          "completion_tokens": 252,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '129 * 3'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 588,
+          "completion_tokens": 226,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 3176,
+      "wall_time_s": 11.939444700000422,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 1345,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 504,
+          "completion_tokens": 181,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(129 * 3)'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 547,
+          "completion_tokens": 137,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1293,
+      "wall_time_s": 2.3880783999993582,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 194,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 121,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1287,
+      "wall_time_s": 2.342796800000542,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 193,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 116,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1288,
+      "wall_time_s": 2.354518299999654,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 194,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 116,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 3,
+      "total_tokens": 2619,
+      "wall_time_s": 7.030654799999866,
+      "final_answer": "The number of 5km days needed to cover 26.2 miles (42.16 km) is **8.43** days. \n\nFinal answer: **8.43**",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 226,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'mi', 'to_unit': 'km', 'value': 26.2}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(converted_value / 5)'}) -> calculator raised ValueError: unsupported expression: Name(id='converted_value', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 567,
+          "completion_tokens": 225,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(42.16 / 5)'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed to cover 26.2 miles (42.16 km) is **8.43** days. \n\nFinal answer: **8.43**",
+          "prompt_tokens": 624,
+          "completion_tokens": 505,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 3,
+      "total_tokens": 2364,
+      "wall_time_s": 5.147282999999334,
+      "final_answer": "The number of 5km days needed is **8.43** (rounded to two decimal places).",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 204,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '[result of unit_convert] / 5'}) -> calculator raised SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 573,
+          "completion_tokens": 237,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is **8.43** (rounded to two decimal places).",
+          "prompt_tokens": 628,
+          "completion_tokens": 250,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2622,
+      "wall_time_s": 7.67644780000046,
+      "final_answer": "The number of 5km days needed is **8.43** (calculated as 26.2 miles \u2248 42.16 km \u00f7 5). If rounding up to full days, **9 days** would be required.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 186,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 522,
+          "completion_tokens": 523,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is **8.43** (calculated as 26.2 miles \u2248 42.16 km \u00f7 5). If rounding up to full days, **9 days** would be required.",
+          "prompt_tokens": 577,
+          "completion_tokens": 342,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1230,
+      "wall_time_s": 2.1270941000002495,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 139,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 499,
+          "completion_tokens": 132,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1329,
+      "wall_time_s": 3.13043800000014,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 238,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(15 * 4)'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 501,
+          "completion_tokens": 130,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1284,
+      "wall_time_s": 2.66589009999916,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 194,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 499,
+          "completion_tokens": 131,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 1,
+      "tool_calls": 0,
+      "total_tokens": 807,
+      "wall_time_s": 2.603144699999575,
+      "final_answer": "The catalog_lookup tool can retrieve the USD price of SKU 'widget-42', but there is no tool available to convert USD to Japanese Yen (JPY). Therefore, I cannot provide the price in JPY.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "The catalog_lookup tool can retrieve the USD price of SKU 'widget-42', but there is no tool available to convert USD to Japanese Yen (JPY). Therefore, I cannot provide the price in JPY.",
+          "prompt_tokens": 458,
+          "completion_tokens": 349,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 3312,
+      "wall_time_s": 13.478347199999916,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. However, the conversion from USD to Japanese Yen is not supported with the current tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 458,
+          "completion_tokens": 1386,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 499,
+          "completion_tokens": 185,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'JPY', 'value': 19.99, 'from_unit': 'USD'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. However, the conversion from USD to Japanese Yen is not supported with the current tools.",
+          "prompt_tokens": 553,
+          "completion_tokens": 231,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2538,
+      "wall_time_s": 7.774354199999834,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. However, the tool does not support converting USD to Japanese Yen (JPY). You may need to use a currency conversion service for this.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 458,
+          "completion_tokens": 544,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 499,
+          "completion_tokens": 220,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 19.99, 'from_unit': 'USD', 'to_unit': 'JPY'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. However, the tool does not support converting USD to Japanese Yen (JPY). You may need to use a currency conversion service for this.",
+          "prompt_tokens": 553,
+          "completion_tokens": 264,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1252,
+      "wall_time_s": 2.36790370000017,
+      "final_answer": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 457,
+          "completion_tokens": 145,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+          "prompt_tokens": 496,
+          "completion_tokens": 154,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1405,
+      "wall_time_s": 3.467520500000319,
+      "final_answer": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 457,
+          "completion_tokens": 309,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+          "prompt_tokens": 496,
+          "completion_tokens": 143,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "react",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 1,
+      "total_tokens": 1408,
+      "wall_time_s": 3.4787436000005982,
+      "final_answer": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 457,
+          "completion_tokens": 301,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-7' is $4.50 USD. However, I cannot check the stock quantity as the available tools only provide pricing information.",
+          "prompt_tokens": 496,
+          "completion_tokens": 154,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2074,
+      "wall_time_s": 5.2343737999999576,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 354,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 176,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 414,
+          "completion_tokens": 147,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1885,
+      "wall_time_s": 3.904838899999959,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 174,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 161,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 412,
+          "completion_tokens": 155,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_multi_step",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2069,
+      "wall_time_s": 5.208826500000214,
+      "final_answer": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 466,
+          "completion_tokens": 342,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(12 * 7) + (144 / 12)'}) -> 96.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of (12 * 7) + (144 / 12) is **96.0**.",
+          "prompt_tokens": 517,
+          "completion_tokens": 166,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 414,
+          "completion_tokens": 164,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1841,
+      "wall_time_s": 4.092366099999708,
+      "final_answer": "The result of 8 + 2 * 5 is 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 216,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is 18.",
+          "prompt_tokens": 497,
+          "completion_tokens": 190,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 373,
+          "completion_tokens": 109,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1935,
+      "wall_time_s": 4.422335799999928,
+      "final_answer": "The result of $8 + 2 \\times 5$ is **18**. \n\nStep-by-step:  \n1. Multiply $2 \\times 5 = 10$  \n2. Add $8 + 10 = 18$  \n\nFinal answer: 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 216,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of $8 + 2 \\times 5$ is **18**. \n\nStep-by-step:  \n1. Multiply $2 \\times 5 = 10$  \n2. Add $8 + 10 = 18$  \n\nFinal answer: 18.",
+          "prompt_tokens": 497,
+          "completion_tokens": 219,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 419,
+          "completion_tokens": 128,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "calc_precedence",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1874,
+      "wall_time_s": 4.320348899999772,
+      "final_answer": "The result of 8 + 2 * 5 is 18.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 456,
+          "completion_tokens": 284,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '8 + 2 * 5'}) -> 18.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 8 + 2 * 5 is 18.",
+          "prompt_tokens": 497,
+          "completion_tokens": 154,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 373,
+          "completion_tokens": 110,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1809,
+      "wall_time_s": 3.9387782000003426,
+      "final_answer": "100 kilometers is approximately 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 152,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is approximately 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 154,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 367,
+          "completion_tokens": 187,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1837,
+      "wall_time_s": 4.11028879999958,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 156,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'km', 'to_unit': 'mi', 'value': 100}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 174,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 368,
+          "completion_tokens": 190,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_km_to_mi",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1914,
+      "wall_time_s": 4.649606200000562,
+      "final_answer": "100 kilometers is equal to 62.14 miles.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 450,
+          "completion_tokens": 161,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'km', 'to_unit': 'mi'}) -> 62.14",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 kilometers is equal to 62.14 miles.",
+          "prompt_tokens": 499,
+          "completion_tokens": 118,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 368,
+          "completion_tokens": 318,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 3,
+      "total_tokens": 3279,
+      "wall_time_s": 8.937365300000238,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 334,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 50, 'from_unit': 'kg', 'to_unit': 'lb'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(result + 10)'}) -> calculator raised ValueError: unsupported expression: Name(id='result', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 558,
+          "completion_tokens": 331,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(110.23 + 10)'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 606,
+          "completion_tokens": 155,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 487,
+          "completion_tokens": 343,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 3,
+      "total_tokens": 3954,
+      "wall_time_s": 13.820010599999478,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 988,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'to_unit': 'lb', 'value': 50, 'from_unit': 'kg'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': 'result_of_previous_conversion + 10'}) -> calculator raised ValueError: unsupported expression: Name(id='result_of_previous_conversion', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 562,
+          "completion_tokens": 362,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '110.23 + 10'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 608,
+          "completion_tokens": 270,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 489,
+          "completion_tokens": 210,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unit_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2788,
+      "wall_time_s": 6.304948300000433,
+      "final_answer": "The final number is 120.23.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 410,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 50, 'from_unit': 'kg', 'to_unit': 'lb'}) -> 110.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 514,
+          "completion_tokens": 164,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '110.23 + 10'}) -> 120.23",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The final number is 120.23.",
+          "prompt_tokens": 560,
+          "completion_tokens": 128,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 441,
+          "completion_tokens": 106,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1827,
+      "wall_time_s": 4.029684000000088,
+      "final_answer": "The converted temperature is 212.00\u00b0F.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 166,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The converted temperature is 212.00\u00b0F.",
+          "prompt_tokens": 501,
+          "completion_tokens": 177,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 369,
+          "completion_tokens": 163,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1911,
+      "wall_time_s": 4.608603000000585,
+      "final_answer": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 166,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'c', 'to_unit': 'f', 'value': 100}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "prompt_tokens": 501,
+          "completion_tokens": 171,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 371,
+          "completion_tokens": 251,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "temp_convert",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1781,
+      "wall_time_s": 3.649137999999766,
+      "final_answer": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 451,
+          "completion_tokens": 153,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 100, 'from_unit': 'c', 'to_unit': 'f'}) -> 212.00",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "100 degrees Celsius is equal to 212.00 degrees Fahrenheit.",
+          "prompt_tokens": 501,
+          "completion_tokens": 99,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 374,
+          "completion_tokens": 203,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2117,
+      "wall_time_s": 5.330814700000701,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 212,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 224,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 436,
+          "completion_tokens": 247,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2114,
+      "wall_time_s": 5.267558199999257,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 211,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 228,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 436,
+          "completion_tokens": 241,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_diff_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2195,
+      "wall_time_s": 5.856637399999272,
+      "final_answer": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 471,
+          "completion_tokens": 244,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-01-01', 'end': '2026-03-15'}) -> 73",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-01-01 and 2026-03-15 is 73 days.",
+          "prompt_tokens": 527,
+          "completion_tokens": 277,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 436,
+          "completion_tokens": 240,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2813,
+      "wall_time_s": 9.513022300000557,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: **216 hours**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 602,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: **216 hours**.",
+          "prompt_tokens": 568,
+          "completion_tokens": 402,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 511,
+          "completion_tokens": 249,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2317,
+      "wall_time_s": 5.861727399999836,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 286,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+          "prompt_tokens": 568,
+          "completion_tokens": 215,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 510,
+          "completion_tokens": 257,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "date_and_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2414,
+      "wall_time_s": 6.541033299999981,
+      "final_answer": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 481,
+          "completion_tokens": 292,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "date_diff({'start': '2026-06-01', 'end': '2026-06-10'}) -> 9",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '9 * 24'}) -> 216.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of days between 2026-06-01 and 2026-06-10 is **9 days**. Multiplying by 24 gives **216 hours**.\n\nFinal answer: 216 hours.",
+          "prompt_tokens": 568,
+          "completion_tokens": 300,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 510,
+          "completion_tokens": 263,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1708,
+      "wall_time_s": 3.036484099999143,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 91,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 125,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 382,
+          "completion_tokens": 151,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1744,
+      "wall_time_s": 3.2712830000000395,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 130,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 122,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 382,
+          "completion_tokens": 151,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_lookup_basic",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1671,
+      "wall_time_s": 2.7263849000000846,
+      "final_answer": "The price of SKU 'widget-42' in USD is $19.99.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 459,
+          "completion_tokens": 91,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' in USD is $19.99.",
+          "prompt_tokens": 500,
+          "completion_tokens": 104,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 382,
+          "completion_tokens": 135,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2916,
+      "wall_time_s": 7.503617399999712,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 496,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 504,
+          "completion_tokens": 162,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(129 * 3)'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 547,
+          "completion_tokens": 169,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 436,
+          "completion_tokens": 140,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2387,
+      "wall_time_s": 6.918384499999775,
+      "final_answer": "The price of SKU 'gadget-1' is $129.00. To find the total cost for 3 units:\n\n**Calculation:**  \n129.00 \u00d7 3 = 387.00\n\n**Answer:** $387.00",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 395,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(price * 3)'}) -> calculator raised ValueError: unsupported expression: Name(id='price', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'gadget-1' is $129.00. To find the total cost for 3 units:\n\n**Calculation:**  \n129.00 \u00d7 3 = 387.00\n\n**Answer:** $387.00",
+          "prompt_tokens": 547,
+          "completion_tokens": 269,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 474,
+          "completion_tokens": 240,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "catalog_then_calc",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2621,
+      "wall_time_s": 5.326707199999873,
+      "final_answer": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 462,
+          "completion_tokens": 181,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'gadget-1'}) -> 129.00 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 504,
+          "completion_tokens": 184,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(129 * 3)'}) -> 387.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The total cost for 3 units of SKU 'gadget-1' is $387.00.",
+          "prompt_tokens": 547,
+          "completion_tokens": 125,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 436,
+          "completion_tokens": 182,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2109,
+      "wall_time_s": 5.667888000000858,
+      "final_answer": "The tool responded: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 419,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool responded: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 134,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 401,
+          "completion_tokens": 177,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 2019,
+      "wall_time_s": 4.992367299999387,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 341,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 121,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 401,
+          "completion_tokens": 178,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unknown_sku",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1903,
+      "wall_time_s": 4.1381611999995584,
+      "final_answer": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 463,
+          "completion_tokens": 193,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'does-not-exist-99'}) -> no such SKU in the catalog: does-not-exist-99",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The tool reported: \"no such SKU in the catalog: does-not-exist-99\"",
+          "prompt_tokens": 515,
+          "completion_tokens": 115,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 401,
+          "completion_tokens": 216,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 3098,
+      "wall_time_s": 7.881987499999923,
+      "final_answer": "The result of 26.2 miles converted to kilometers and divided by 5 is **8.432**. \n\nIf you're calculating 5km days needed, you would round up to **9 days** (since partial days aren't practical).",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 172,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 522,
+          "completion_tokens": 290,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 26.2 miles converted to kilometers and divided by 5 is **8.432**. \n\nIf you're calculating 5km days needed, you would round up to **9 days** (since partial days aren't practical).",
+          "prompt_tokens": 577,
+          "completion_tokens": 199,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 507,
+          "completion_tokens": 359,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 2,
+      "total_tokens": 2389,
+      "wall_time_s": 6.691757900000084,
+      "final_answer": "The number of 5km days needed is 8.432.\n\n<final_answer>8.432</final_answer>",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "2 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 345,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '(result_of_previous_conversion) / 5'}) -> calculator raised ValueError: unsupported expression: Name(id='result_of_previous_conversion', ctx=Load())",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": true
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The number of 5km days needed is 8.432.\n\n<final_answer>8.432</final_answer>",
+          "prompt_tokens": 571,
+          "completion_tokens": 259,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 476,
+          "completion_tokens": 266,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "multi_tool_chain",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2891,
+      "wall_time_s": 6.480274899999131,
+      "final_answer": "The result of dividing 26.2 miles (42.16 km) by 5 is **8.43** km days. \n\nFinal answer: 8.43",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 472,
+          "completion_tokens": 172,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 26.2, 'from_unit': 'mi', 'to_unit': 'km'}) -> 42.16",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 522,
+          "completion_tokens": 189,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '42.16 / 5'}) -> 8.431999999999999",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of dividing 26.2 miles (42.16 km) by 5 is **8.43** km days. \n\nFinal answer: 8.43",
+          "prompt_tokens": 577,
+          "completion_tokens": 248,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 493,
+          "completion_tokens": 218,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1815,
+      "wall_time_s": 3.8300027000004775,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 139,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 499,
+          "completion_tokens": 139,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 379,
+          "completion_tokens": 199,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1829,
+      "wall_time_s": 3.909251099999892,
+      "final_answer": "The result of 15 multiplied by 4 is 60.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 139,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is 60.",
+          "prompt_tokens": 499,
+          "completion_tokens": 121,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 378,
+          "completion_tokens": 232,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "distractor_check",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1792,
+      "wall_time_s": 3.6326807999994344,
+      "final_answer": "The result of 15 multiplied by 4 is **60**.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 460,
+          "completion_tokens": 204,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "calculator({'expression': '15 * 4'}) -> 60.0",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The result of 15 multiplied by 4 is **60**.",
+          "prompt_tokens": 499,
+          "completion_tokens": 128,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 379,
+          "completion_tokens": 122,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 3392,
+      "wall_time_s": 10.916777299999922,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. Conversion to Japanese Yen is not supported with the available tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 458,
+          "completion_tokens": 809,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 499,
+          "completion_tokens": 216,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'from_unit': 'USD', 'to_unit': 'JPY', 'value': 19.99}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. Conversion to Japanese Yen is not supported with the available tools.",
+          "prompt_tokens": 553,
+          "completion_tokens": 223,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 446,
+          "completion_tokens": 188,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 2982,
+      "wall_time_s": 7.875524099999893,
+      "final_answer": "The USD to JPY conversion is not supported by the available tools. Please check if you need a different unit conversion or if there's another way I can assist.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 458,
+          "completion_tokens": 348,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 499,
+          "completion_tokens": 216,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 19.99, 'from_unit': 'USD', 'to_unit': 'JPY'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The USD to JPY conversion is not supported by the available tools. Please check if you need a different unit conversion or if there's another way I can assist.",
+          "prompt_tokens": 553,
+          "completion_tokens": 214,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 447,
+          "completion_tokens": 247,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_currency",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 4,
+      "tool_calls": 2,
+      "total_tokens": 3039,
+      "wall_time_s": 8.160977199999252,
+      "final_answer": "The price of SKU 'widget-42' is $19.99 USD. Currency conversion to Japanese Yen is not supported by the available tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 458,
+          "completion_tokens": 340,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-42'}) -> 19.99 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 499,
+          "completion_tokens": 216,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "unit_convert({'value': 19.99, 'from_unit': 'USD', 'to_unit': 'JPY'}) -> unsupported conversion: USD -> JPY",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price of SKU 'widget-42' is $19.99 USD. However, currency conversion between USD and JPY is not supported by the available tools. You may need to use a currency conversion service for the JPY equi",
+          "prompt_tokens": 553,
+          "completion_tokens": 223,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 465,
+          "completion_tokens": 285,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1893,
+      "wall_time_s": 4.3642932000002475,
+      "final_answer": "The price for SKU 'widget-7' is $4.50 USD. Stock information is not available through this tool.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 457,
+          "completion_tokens": 168,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price for SKU 'widget-7' is $4.50 USD. However, I cannot check stock quantities - this tool only provides pricing information.",
+          "prompt_tokens": 496,
+          "completion_tokens": 166,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 388,
+          "completion_tokens": 218,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 2,
+      "tool_calls": 0,
+      "total_tokens": 1421,
+      "wall_time_s": 4.587936800000534,
+      "final_answer": "The price for SKU 'widget-7' can be looked up using the catalog_lookup tool. However, I don't have access to inventory information through the provided tools. \n\nWould you like me to retrieve the price instead?",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "The price for SKU 'widget-7' can be looked up using the catalog_lookup tool. However, I don't have access to inventory information through the provided tools. \n\nWould you like me to retrieve the price",
+          "prompt_tokens": 457,
+          "completion_tokens": 177,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 362,
+          "completion_tokens": 425,
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task_id": "unsolvable_stock",
+      "strategy": "reflexion",
+      "success": true,
+      "hit_step_limit": false,
+      "llm_calls": 3,
+      "tool_calls": 1,
+      "total_tokens": 1988,
+      "wall_time_s": 4.872047799999564,
+      "final_answer": "The price for SKU 'widget-7' is $4.50 USD. Inventory levels cannot be checked as this functionality isn't available in the provided tools.",
+      "steps": [
+        {
+          "kind": "llm_call",
+          "detail": "The price for SKU 'widget-7' can be looked up, but I cannot check inventory levels as this functionality isn't available in the provided tools.\n\n",
+          "prompt_tokens": 457,
+          "completion_tokens": 192,
+          "is_error": false
+        },
+        {
+          "kind": "tool_call",
+          "detail": "catalog_lookup({'sku': 'widget-7'}) -> 4.50 USD",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "The price for SKU 'widget-7' is $4.50 USD. However, I cannot check inventory levels as this functionality isn't available in the provided tools.",
+          "prompt_tokens": 507,
+          "completion_tokens": 179,
+          "is_error": false
+        },
+        {
+          "kind": "llm_call",
+          "detail": "1 tool call(s)",
+          "prompt_tokens": 402,
+          "completion_tokens": 251,
+          "is_error": false
+        }
+      ]
+    }
+  ]
+}

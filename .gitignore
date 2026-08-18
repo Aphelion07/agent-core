@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+uv.lock
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Environment - never commit real keys
+.env
+.env.local
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
